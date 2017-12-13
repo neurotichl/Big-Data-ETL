@@ -1,8 +1,8 @@
 # Flume and Jinja2
----
-### Fluming multiple sources and sinks & generating flume config using Jinja 
 
-This is a demo on using Jinja to generate flume config and flume data from local directory to HDFS.
+### Fluming multiple sources (spoolDir) and sinks (HDFS) & generating flume config using Jinja 
+
+This is a demo on using Jinja to generate flume config and flume data **from local directory to HDFS**.
 We have a folder **files_to_flume** which contains 4 folders that we would like to flume to HDFS. 
 - customer
 - shop

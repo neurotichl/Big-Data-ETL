@@ -2,7 +2,101 @@
 
 ### Fluming multiple sources (spoolDir) and sinks (HDFS) & generating flume config using Jinja 
 
-This is a demo on using Jinja to generate flume config and flume data **from local directory to HDFS**.
+This is a demo on using Jinja to generate flume config and flume data from local directory to HDFS.
+
+# Introduction
+
+Flume configs usually look like this:
+```
+# Define agent name, source name, sink name and channel name
+agent.sources = src1
+agent.sinks = sink1
+agent.channels = ch1
+
+# linking src1 and sink1 with ch1
+agent.sources.src1 = ch1
+agent.sinks.sink1 = ch1
+
+##### configs for source, sink and channel ####
+agent.sources.src1.... = ....
+.....
+
+agent.sinks.sink1..... = ....
+.....
+
+agent.channels.ch1...  = .....
+.....
+```
+
+When adding more sources, sinks and channel to the same agent, the flume config become very long
+```
+# Define agent name, source name, sink name and channel name (multiple names are seperated with space bar)
+agent.sources = src1 src2 src3
+agent.sinks = sink1 sink2 sink3
+agent.channels = ch1 ch2 ch3
+
+# linking src1 and sink1 with ch1
+agent.sources.src1 = ch1
+agent.sinks.sink1 = ch1
+
+##### configs for src1, sink1 and ch1 ####
+agent.sources.src1.... = ....
+..... = ....
+agent.sinks.sink1..... = ....
+..... = ....
+agent.channels.ch1...  = .....
+..... = ....
+
+# linking src2 and sink2 with ch2
+agent.sources.src2 = ch2
+agent.sinks.sink2 = ch2
+
+##### configs for src2, sink2 and ch2 ####
+agent.sources.src1.... = ....
+agent.sinks.sink1..... = ....
+agent.channels.ch1...  = .....
+..... = ....
+
+##### configs for src3, sink3 and ch3 ####
+.........
+.........
+```
+
+Which is kind of repetitive to write it manually. Jinja has come to the rescued in generating repetitive templates
+
+## Jinja Templating:
+
+Documentation of Jinja can be found [here](http://jinja.pocoo.org/docs/2.10/).
+
+Example of using Jinja templating syntax:
+
+Template:
+```
+{%for name in source_names %}
+{{ name }}
+{% endfor %}
+```
+
+which source_names is a list
+```
+source_names = ['a','b','c']
+```
+
+Rendering the Template will give:
+```
+a
+b
+c
+```
+
+Hence Jinja can be used in generating the repetitive flume config. [SEE THE EXAMPLE CODE HERE!](https://github.com/neurotichl/Big-Data-ETL/blob/master/Jinja_Flume/Jinja_Flume/conf_template/gen_flume_conf.py#L47)
+
+---
+
+# Demo with an example
+
+# Objective
+
 We have a folder **files_to_flume** which contains 4 folders that we would like to flume to HDFS. 
 - customer
 - shop

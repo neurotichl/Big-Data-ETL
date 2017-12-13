@@ -1,5 +1,5 @@
 # Flume and Jinja2
----
+
 ### Fluming multiple sources and sinks & generating flume config using Jinja 
 
 This is a demo on using Jinja to generate flume config and flume data from local directory to HDFS.
@@ -9,14 +9,14 @@ We have a folder **files_to_flume** which contains 4 folders that we would like 
 - long_file
 - file_not_utf8
 
-- Before Flume
+#### Before Flume
    ![before flume](https://github.com/neurotichl/Big-Data-ETL/blob/master/Jinja_Flume/fluming_pic/before_flume.png)
 
-- After Flume
+#### After Flume
    ![after flume](https://github.com/neurotichl/Big-Data-ETL/blob/master/Jinja_Flume/fluming_pic/after_flume.PNG)
 
 # Folder Structure
----
+
 Jinja_Fllume
 
 |--conf_template
@@ -36,14 +36,14 @@ Jinja_Fllume
 |--kill_flume.sh
 
 # General Flow
----
+
 1. Add required information about the sources and sinks in `conf_template/flume_source_sink.ini`
 2. Run `gen_flume_conf.sh` to generate the flume config 
 3. Run `run_flume.sh` to start fluming, flume process ID can be checked in `flume_pid.txt`
 4. To kill flume, run `kill_flume.sh`
 
 # Explanation
----
+
 
 
 ##### *gen_flume_conf.sh*
@@ -60,7 +60,7 @@ To read the pid from `flume_pid.txt` and kill the flume process.
 
 
 # Some Tips 
----
+
 When adding a new source -> sink, the flume process don't have to be stopped, just regenerate the `flume.conf` and flume will auto reload it.
 
 e.g.

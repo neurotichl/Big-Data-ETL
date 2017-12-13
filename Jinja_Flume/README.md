@@ -9,19 +9,30 @@ We have a folder **files_to_flume** which contains 4 folders that we would like 
 - long_file
 - file_not_utf8
 
-![before flume](https://github.com/neurotichl/Big-Data-ETL/blob/master/Jinja_Flume/fluming_pic/before_flume.png)
-![after flume](https://github.com/neurotichl/Big-Data-ETL/blob/master/Jinja_Flume/fluming_pic/after_flume.PNG)
+- Before Flume
+   ![before flume](https://github.com/neurotichl/Big-Data-ETL/blob/master/Jinja_Flume/fluming_pic/before_flume.png)
+
+- After Flume
+   ![after flume](https://github.com/neurotichl/Big-Data-ETL/blob/master/Jinja_Flume/fluming_pic/after_flume.PNG)
 
 # Folder Structure
 ---
 Jinja_Fllume
+
 |--conf_template
+
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--flume_source_sink.ini
+
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--flume.conf
+
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--gen_flume_conf.py
+
 |--gen_flume_conf.sh
+
 |--run_flume.sh
+
 |--flume_pid.txt
+
 |--kill_flume.sh
 
 # General Flow

@@ -17,17 +17,17 @@ We have a folder **files_to_flume** which contains 4 folders that we would like 
 
 # Folder Structure
 
-.
+```
 Jinja_Flume
 +-- conf_template
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- flume_source_sink.ini
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- flume.conf
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+-- gen_flume_conf.py
+|   +-- flume_source_sink.ini
+|   +-- flume.conf
+|   +-- gen_flume_conf.py
 +-- gen_flume_conf.sh
 +-- run_flume.sh
 +-- flume_pid.txt
 +-- kill_flume.sh
-
+```
 # General Flow
 
 1. Add required information about the sources and sinks in `conf_template/flume_source_sink.ini`

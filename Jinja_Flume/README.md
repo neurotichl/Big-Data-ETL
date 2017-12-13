@@ -35,11 +35,10 @@ agent.sources = src1 src2 src3
 agent.sinks = sink1 sink2 sink3
 agent.channels = ch1 ch2 ch3
 
-# linking src1 and sink1 with ch1
+##### configs for src1, sink1 and ch1 ####
 agent.sources.src1 = ch1
 agent.sinks.sink1 = ch1
 
-##### configs for src1, sink1 and ch1 ####
 agent.sources.src1.... = ....
 ..... = ....
 agent.sinks.sink1..... = ....
@@ -47,11 +46,10 @@ agent.sinks.sink1..... = ....
 agent.channels.ch1...  = .....
 ..... = ....
 
-# linking src2 and sink2 with ch2
+##### configs for src2, sink2 and ch2 ####
 agent.sources.src2 = ch2
 agent.sinks.sink2 = ch2
 
-##### configs for src2, sink2 and ch2 ####
 agent.sources.src1.... = ....
 agent.sinks.sink1..... = ....
 agent.channels.ch1...  = .....
@@ -62,7 +60,7 @@ agent.channels.ch1...  = .....
 .........
 ```
 
-Which is kind of repetitive to write it manually. Jinja has come to the rescued in generating repetitive templates
+Which is kind of repetitive to write it manually. Jinja has come to the rescue in generating repetitive config.
 
 ## Jinja Templating:
 
@@ -82,7 +80,7 @@ which source_names is a list
 source_names = ['a','b','c']
 ```
 
-Rendering the Template will give:
+Rendering the template will give:
 ```
 a
 b
@@ -162,7 +160,7 @@ To read the pid from `flume_pid.txt` and kill the flume process.
 
 3. If the length of the lines in the file is too long, exceeding 2048 number of characters, flume will only show WARN log and truncate the line to next line(s). 
    ![WARN message](https://github.com/neurotichl/Big-Data-ETL/blob/master/Jinja_Flume/fluming_pic/line_too_long.PNG)
-  Hence it is very important to check the max number of character of the line in the file and set it in the flume config's `deserializer.maxLineLength`  before starting a flume.  (Use awk`{print length} to check)
+  Hence it is very important to check the max number of character of the line in the file and set it in the flume config's `deserializer.maxLineLength`  before starting flume.  (Use awk`{print length} to check)
     ![Checking line length using linux command](https://github.com/neurotichl/Big-Data-ETL/blob/master/Jinja_Flume/fluming_pic/max_length_line.PNG)
 
 

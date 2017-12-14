@@ -1,7 +1,7 @@
 # ETL
 
-My self-written ETL codes to facilitate me in doing ETL tasks. Documentation will be updated slowly.
+A place to store my ETL codes for easy reference.
 
-The demo on using the library will be shown in the [Tutorial](https://github.com/neurotichl/Spark_ETL/blob/master/Tutorial.ipynb) notebook.
-
-The spark version used here is pyspark 2.0
+Navigate to:
+1. [Flume](https://github.com/neurotichl/Big-Data-ETL/tree/master/Jinja_Flumev)
+2. [Spark Transformation Code](https://github.com/neurotichl/Big-Data-ETL/tree/master/Spark%20Code)
